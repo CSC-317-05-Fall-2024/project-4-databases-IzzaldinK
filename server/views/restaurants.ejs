@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <link rel="stylesheet" href="/restaurants.css">
+    <link rel="icon" href="images/icon.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="img-container"></div>
+        <nav class = "nav-bar"></nav>
+
+        <div class="content-container" >
+            <% restaurants.forEach(restaurant => { %>
+                <div class="restaurant" data-id="<%= restaurant.id %>">
+                    <img src="<%= restaurant.photo %>" alt="<%= restaurant.name %>">
+                    <p>
+                        <span><%= restaurant.name %></span><br><br>
+                        <%= restaurant.address.split(',')[0] %>,<br>
+                        <%= restaurant.address.split(',')[1] %>,<%= restaurant.address.split(',')[2] %><br><br>
+                        <%= restaurant.phone %>
+                    </p>
+                    <button class="delete">X</button>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <footer class = footer></footer>
+
+    <script src="scripts/header.js"></script>
+    <script src="scripts/restaurantCards.js"></script>
+</body>
+</html>
